@@ -13,7 +13,95 @@
 Let's see if this changes! 
 
 <script> 
-	prompt('Hi! What is your name???')
+var cardDeck = ['card0', 'card', 'card2', 'card3', 'card4', 'card5', 'card6', 'card7', 'card8', 'card9', 'card10', 'card11', 'card12', 'card13', 'card14', 'card15', 'card16', 'card17', 'card18', 'card19'];
+
+let player1Cards = [];
+let player2Cards = [];
+let player3Cards = [];
+let player4Cards = [];
+let player5Cards = [];
+
+let cardDealing = (playerHand, k) => {
+
+	while (playerHand.length < 5) {
+
+		playerHand.unshift(cardDeck[Math.floor(Math.random() * 20)])
+}
+	console.log("Player " + k + "'s cards are:" + playerHand)
+
+}
+
+cardDealing(player1Cards, 1);
+cardDealing(player2Cards, 2);
+cardDealing(player3Cards, 3);
+cardDealing(player4Cards, 4);
+cardDealing(player5Cards, 5);
+
+console.log('');
+
+
+//Function for players to choose top two cards and compile them into top 10.
+
+let topTenCards = [];
+
+var playersChoose = (playerName) => {
+	
+	let twoCards = [];
+
+	console.log('Player ' + playerName + ' you are allowed to choose 2 cards from your 5');
+
+	twoCards.unshift(prompt('Which is the first card you would like to choose?'));
+	twoCards.unshift(prompt('Which is the second card you would like to choose?'))
+	topTenCards.unshift(twoCards[0]);
+	topTenCards.unshift(twoCards[1])
+
+	console.log(''); //line break
+
+}
+
+//let playersChoose = require('./Player_1.js');
+
+
+let i = 1
+while (i < 6) {
+	playersChoose(i)
+	i++
+}
+
+console.log(topTenCards);
+
+//________________________________________________________________
+//This is where the top 10 cards are compiled and the best six 
+
+console.log('The top 10 cards are: ' + topTenCards);
+
+console.log("Ok....here's the time to pick your top 6 favorite cards!!")
+
+console.log('');
+
+
+let top6Choices = [];
+
+let finalSix = (i) => {
+
+	top6Choices.push(prompt("Which card is #" + i + ' on your list?'));
+
+}
+
+let p = 6
+while(p > 0) {
+	finalSix(i);
+	p--
+}
+
+console.log('');
+
+console.log('Drumroll Please!!!!!');
+
+console.log('');
+
+console.log('The moment we have all been waiting for....here are the top six choices from 6th favorite to very favorite: ' + top6Choices);
+
 	
 </script>
 
