@@ -26,6 +26,28 @@
 
 <p> Hello, <span id="nameField"> Friend! :-) </span> </p>
 
+<hr>
+
+<img src="https://icons.iconarchive.com/icons/barkerbaggies/pool-ball/256/Ball-8-icon.png">
+
+<h4> Hey! Are you ready to learn your future?? If so, type your question in the box below before pressing "Enter." </h4>
+
+<input id='questionInput'></input>
+
+<p> Good question: <span id="questionField"> </span> </p>
+
+<p>Click below if you are ready to hear your fate!</p>
+
+<Button onclick="eightBall()"> I'm ready!</Button>
+
+<p>And the answer is..........</p>
+ 
+<h3 id="answer"> </h3>
+
+
+
+
+
 
 <script> 
 
@@ -84,14 +106,46 @@ function nameHandler(e) {
 
 document.addEventListener('keyup', nameHandler);
 
+//Magic 8 ball question asker
+
+function questionDisplayer(q) {
+	if (q.keyCode == 13) {
+		var questionInput = document.getElementById('questionInput');
+		var questionField = document.getElementById('questionField');
+		questionField.innerHTML = questionInput.value;
+		questionField.style.backgroundColor = 'yellow'
+		
+	}
+}
+
+document.addEventListener('keyup', questionDisplayer);
+
+//magic 8 ball continue button
+
+function eightBall() {
+
+	let yourFate = '';
+	randomNumber = Math.floor(Math.random() * 8)
+	let eightBall = ''
+
+		if (randomNumber == 0) {yourFate = 'Absolutely!'}
+		if (randomNumber == 1) {yourFate = 'Sure, why not?'}
+		if (randomNumber == 2) {yourFate = 'Heck Yeah!'}
+		if (randomNumber == 3) {yourFate = 'I feel like that is more of a presonal problem...'}
+		if (randomNumber == 4) {yourFate = 'Absolutely not, but good try!'}
+		if (randomNumber == 5) {yourFate = 'Nope!'}
+		if (randomNumber == 6) {yourFate = 'I would not count it out!'}
+		if (randomNumber == 7) {yourFate = 'Do you want me to be honest?'}
+
+
+
+  document.getElementById("answer").innerHTML = yourFate;
+}
+
 
 </script>
 
-<script> 
 
-
-
-</script>
 
 
 
