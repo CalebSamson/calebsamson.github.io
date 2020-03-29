@@ -1,9 +1,104 @@
 <!DOCTYPE html>   
 
+<h2> Hey team! Please play around with this site and let me know what you think. I should have an interactive 'Magic 8 Ball' program up by the evening of March 29th. Stay posted! </h2>
 
-<header> Hey Team! This is where I am going to be posting some projects I've been learning. Stay posted! :-)  </header>
+<header> Look! This counts how many times you click on a button!  </header>
 
-<h1 style="background-color:green; text-transform:capitalize; font-family: arial"> My name is Caleb and my favorite color is green!</h1>
+<BUTTON id="clickHere"> Click Here! </BUTTON>
+
+<p> You've clicked the button <span id="numClicks" > times </span>
+
+	<hr>
+
+<div id="mouseOverMe" class="highlightText">
+
+<p> Let's see what happens when you put the mouse over this! </p>
+
+
+<p> I wonder if this will highlight, too? </p>
+
+</div>
+
+<hr>
+
+<h3> In the box below, please type your name and press "Enter" </h3>
+<input id='nameInput'></input>
+
+<p> Hello, <span id="nameField"> Friend! :-) </span> </p>
+
+
+<script> 
+
+	//click counter
+
+var clicks = 0;
+
+function clickCounter() {
+	clicks++;
+	var numClicksSpan = document.getElementById('numClicks');
+	if (clicks == 1)
+		numClicksSpan.innerHTML = 'once';
+	else
+		numClicksSpan.innerHTML = clicks + ' times';
+}
+
+var button = document.getElementById('clickHere');
+button.addEventListener('click', clickCounter);
+
+//hover over
+
+
+function makeBold() {
+	var divs = document.getElementsByClassName('highlightText');
+	for (var i = 0; i < divs.length; i++) {
+		divs[i].style.color = 'green';
+		divs[i].style.fontWeight = 'bold';
+	}
+}
+
+function restore() {
+	var divs = document.getElementsByClassName('highlightText');
+	for (var i = 0; i<divs.length; i++) {
+		divs[i].style.color = 'black';
+		divs[i].style.fontWeight = 'normal';
+	}
+}
+
+var mouseOverMeDiv = document.getElementById('mouseOverMe');
+mouseOverMeDiv.addEventListener('mouseover', makeBold);
+mouseOverMeDiv.addEventListener('mouseout', restore);
+
+//input into box
+
+
+function nameHandler(e) {
+	if (e.keyCode == 13) {
+		var nameInput = document.getElementById('nameInput');
+		var nameField = document.getElementById('nameField');
+		nameField.innerHTML = nameInput.value;
+		nameField.style.backgroundColor = 'pink';
+		nameField.style.textTransform = 'capitalize';
+
+	}
+}
+
+document.addEventListener('keyup', nameHandler);
+
+
+</script>
+
+<script> 
+
+
+
+</script>
+
+
+
+</p>
+
+
+
 
 
 <body>
