@@ -1,6 +1,24 @@
 <!DOCTYPE html>   
 
+<head>
+
+	<link rel="stylesheet" href="index.css">
+	<style type="text/css">
+		
+		/* Create two equal columns that floats next to each other */
+
+
+
+	</style>
+
+
+</head>
+
 <h2> Hey team! Please play around with this site and let me know what you think. I should have an interactive 'Magic 8 Ball' program up by the evening of March 29th. Stay posted! </h2>
+
+	<div class="row">
+
+		<div class="column" style="background-color: PALEGOLDENROD">
 
 <header> Look! This counts how many times you click on a button!  </header>
 
@@ -20,6 +38,7 @@
 </div>
 
 <hr>
+	
 
 <h3> In the box below, please type your name and press "Enter" </h3>
 <input id='nameInput'></input>
@@ -27,6 +46,9 @@
 <p> Hello, <span id="nameField"> Friend! :-) </span> </p>
 
 <hr>
+
+</div>
+		<div class="column" style="background-color: MOCCASIN">
 
 <img src="https://icons.iconarchive.com/icons/barkerbaggies/pool-ball/256/Ball-8-icon.png">
 
@@ -40,101 +62,15 @@
 
 <Button onclick="eightBall()"> I'm ready!</Button>
 
-<h3>And the answer is.......... <span id="answer"> </span> </h3>
+<h3>And the answer is......... <span id="answer"> </h3>
+		</div>
+
+	</div>
+ 
+<hr>
 
 
-<script> 
-
-	//click counter
-
-var clicks = 0;
-
-function clickCounter() {
-	clicks++;
-	var numClicksSpan = document.getElementById('numClicks');
-	if (clicks == 1)
-		numClicksSpan.innerHTML = 'once';
-	else
-		numClicksSpan.innerHTML = clicks + ' times';
-}
-
-var button = document.getElementById('clickHere');
-button.addEventListener('click', clickCounter);
-
-//hover over
-
-
-function makeBold() {
-	var divs = document.getElementsByClassName('highlightText');
-	for (var i = 0; i < divs.length; i++) {
-		divs[i].style.color = 'green';
-		divs[i].style.fontWeight = 'bold';
-	}
-}
-
-function restore() {
-	var divs = document.getElementsByClassName('highlightText');
-	for (var i = 0; i<divs.length; i++) {
-		divs[i].style.color = 'black';
-		divs[i].style.fontWeight = 'normal';
-	}
-}
-
-var mouseOverMeDiv = document.getElementById('mouseOverMe');
-mouseOverMeDiv.addEventListener('mouseover', makeBold);
-mouseOverMeDiv.addEventListener('mouseout', restore);
-
-//input into box
-
-
-function nameHandler(e) {
-	if (e.keyCode == 13) {
-		var nameInput = document.getElementById('nameInput');
-		var nameField = document.getElementById('nameField');
-		nameField.innerHTML = nameInput.value;
-		nameField.style.backgroundColor = 'pink';
-		nameField.style.textTransform = 'capitalize';
-
-	}
-}
-
-document.addEventListener('keyup', nameHandler);
-
-//Magic 8 ball question asker
-
-function questionDisplayer(q) {
-	if (q.keyCode == 13) {
-		var questionInput = document.getElementById('questionInput');
-		var questionField = document.getElementById('questionField');
-		questionField.innerHTML = questionInput.value;
-		questionField.style.backgroundColor = 'yellow'
-		
-	}
-}
-
-document.addEventListener('keyup', questionDisplayer);
-
-//magic 8 ball continue button
-
-function eightBall() {
-
-	let yourFate = '';
-	randomNumber = Math.floor(Math.random() * 8)
-	let eightBall = ''
-
-		if (randomNumber == 0) {yourFate = 'Absolutely!'}
-		if (randomNumber == 1) {yourFate = 'Sure, why not?'}
-		if (randomNumber == 2) {yourFate = 'Heck Yeah!'}
-		if (randomNumber == 3) {yourFate = 'I feel like that is more of a presonal problem...'}
-		if (randomNumber == 4) {yourFate = 'Absolutely not, but good try!'}
-		if (randomNumber == 5) {yourFate = 'Nope!'}
-		if (randomNumber == 6) {yourFate = 'I would not count it out!'}
-		if (randomNumber == 7) {yourFate = 'Do you want me to be honest?'}
-
-
-
-  document.getElementById("answer").innerHTML = yourFate;
-}
+<script type="text/javascript" src="index.js">
 
 
 </script>
