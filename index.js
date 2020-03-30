@@ -54,10 +54,27 @@ function nameHandler(e) {
 
 document.addEventListener('keyup', nameHandler);
 
+//favorite Animal lister
+
+    let faveAnimals = [];
+
+    function keyPressHandler(u) {
+      if (u.keyCode == 13) {
+        $('#list').append('<li>'  +  $('#itemField').val() + '</li>');
+        $('#itemField').val('');
+
+      }
+    }
+
+
+  $('#itemField').keyup(keyPressHandler);
+
+
+
 //Magic 8 ball question asker
 
-function questionDisplayer(q) {
-	if (q.keyCode == 13) {
+function questionDisplayer(a) {
+	if (a.keyCode == 13) {
 		var questionInput = document.getElementById('questionInput');
 		var questionField = document.getElementById('questionField');
 		questionField.innerHTML = questionInput.value;
