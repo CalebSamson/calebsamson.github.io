@@ -1,5 +1,5 @@
 
-
+alert(gdpFinder);
 
 var clicks = 0;
 
