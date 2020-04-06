@@ -1,5 +1,4 @@
 
-
 var clicks = 0;
 
 function clickCounter() {
@@ -105,4 +104,103 @@ function eightBall() {
 
   document.getElementById("answer").innerHTML = yourFate;
 }
+
+
+
+
+//Rock, Paper, Scissors Game:
+var botChoice = '';
+var userChoice = '';
+var userName = '';
+var userScore = 0;
+var botScore = 0;
+var whoWon = '';
+
+function RPS(b) {
+if (b.keyCode == 13){
+	var userChoice = document.getElementById('userChoiceInput').value;
+	randomNumber = Math.floor(Math.random() * 3)
+		if (randomNumber == 0) {botChoice = 'Rock'}
+		if (randomNumber == 1) {botChoice = 'Paper'}
+		if (randomNumber == 2) {botChoice = 'Scissors'}
+
+		if (botChoice === 'Rock' && userChoice === 'Scissors') {
+			whoWon = 'That is one for me!' ; botScore++};
+		if (botChoice === 'Paper' && userChoice === 'Rock') {
+			whoWon = 'I win and you lose!' ; botScore++};
+		if (botChoice === 'Scissors' && userChoice === 'Paper') {
+			whoWon = 'Score a point for me!' ; botScore++};
+		if (botChoice === 'Scissors' && userChoice === 'Rock') {
+			whoWon = 'So that is a point for you!' ; userScore++};
+		if (botChoice === 'Rock' && userChoice === 'Paper') {
+			whoWon = 'You win and I lose that one!' ; userScore++};
+		if (botChoice === 'Paper' && userChoice === 'Scissors') {
+			whoWon = 'Damn! You got me!' ; userScore++};
+		if (botChoice === userChoice) {whoWon = "It's a tie! Let's play again!"};
+
+		console.log(userChoice);
+		console.log(botChoice);
+
+
+
+//let whoWon = ''
+//if (userScore > botScore){whoWon = 'you'}
+//if (botScore > userScore){whoWon = 'I'}
+//if (botScore === userScore) {whoWon = 'we both'}
+document.getElementById("whoWonSpan").innerHTML = whoWon;
+document.getElementById("botChoiceSpan").innerHTML = botChoice;
+document.getElementById("botScoreSpan").innerHTML = botScore;
+document.getElementById("userScoreSpan").innerHTML = userScore;
+
+}
+};
+
+
+
+
+
+document.addEventListener('keyup', RPS);
+
+
+
+
+
+
+//use data from csv to output population and gdp/cap
+
+
+
+/*
+
+const parse = require('csv-parse/lib/sync');
+const assert = require('assert');
+const fs = require('fs');
+
+
+const input = fs.readFileSync('country_pop.csv');
+
+const records = parse(input, {
+  columns: true,
+  skip_empty_lines: true
+})
+
+
+let popAnswer = 0
+
+function gdpFinder(countryInput, u) {
+	if (u.keyCode == 13) {
+	for (let i = 0; i < records.length; i++) {
+	if (records[i].country == countryInput) {
+		gdpAnswer = records[i].gdpPerCapita
+		popAnswer = records[i].pop
+	}
+	}
+}};
+
+document.getElementById("popField").innerHTML = popAnswer;
+document.getElementById("gdpField").innerHTML = gdpAnswer;
+
+document.addEventListener('keyup', gdpFinder);
+
+*/
 

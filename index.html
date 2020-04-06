@@ -2,24 +2,20 @@
 
 <head>
 
-	<script
-  src="https://code.jquery.com/jquery-3.4.1.min.js"
-  integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
-  crossorigin="anonymous"></script>
+	<script src="jquery-3.4.1.min.js"></script>
 
 	<link rel="stylesheet" href="index.css">
 	
 	<style type="text/css"> </style>
-	
 
 
 </head>
 
-<h2> Hey team! Please play around with this site and let me know what you think. </h2>
+<h2 class = 'center'> Hey team! Please play around with this site and let me know what you think. Please note of the brand new Rock, Paper, Scissors game! :-) </h2>
 
 	<div class="row">
 
-		<div class="column" style="background-color: PALEGOLDENROD">
+		<div class="column" style="background-color: THISTLE">
 
 <header> Look! This counts how many times you click on a button!  </header>
 
@@ -48,7 +44,7 @@
 
 <hr>
 
- <h4> Please type in your favorite animals below before pressing the "enter" key. </h4>
+ <h4> Please type in your favorite animals below, making sure to press the "enter" key before each animal. </h4>
 
   <input id="itemField"> </input>
 
@@ -60,11 +56,19 @@
 
   </ul>
 
+  <br />
+  <hr>
+  <br />
+  <br />
+
+  <img src="https://www.helpmykidlearn.ie/images/uploads/rock,_paper_larger.jpg" width=300px height=400px class="center">
+
+
 
 </div>
-		<div class="column" style="background-color: MOCCASIN">
+		<div class="column" style="background-color: LIGHTBLUE">
 
-<img src="https://icons.iconarchive.com/icons/barkerbaggies/pool-ball/256/Ball-8-icon.png">
+<img src="https://icons.iconarchive.com/icons/barkerbaggies/pool-ball/256/Ball-8-icon.png" class="center">
 
 <h4> Hey! Are you ready to learn your future?? If so, type your question in the box below before pressing "Enter." </h4>
 
@@ -77,26 +81,48 @@
 <Button onclick="eightBall()"> I'm ready!</Button>
 
 <h3>And the answer is......... <span id="answer"> </h3>
+
+
+	<hr>
+
+<h3>Want to play Rock, Paper, Scissors with me? Type "Rock, Paper or Scissors" in the box below and press "Enter."</h3>
+
+<input id='userChoiceInput'></input>
+
+<h4>And the computer choice is......<b><span id='botChoiceSpan'> </span>!</b></h4>
+
+<span id='whoWonSpan'></span>
+
+<p class = 'center'>You have scored <b><span id='userScoreSpan'> 0 </b></span> points!</p>
+<p class = 'center'>I have scored <b><span id='botScoreSpan'> 0 </span></b> points!</p>
+ 
+
+
+
+<!--
+<h4>This is where you can search the population and GDP/Capita of a country. Simply type the name on a country in the box below and press "Enter." </h4>	
+
+	<input id="countryInput"> </input>
+
+	<span id="popField"> </span>
+	<span id="gdpField"> </span> 
+-->
+
+
 		</div>
 
+
 	</div>
- 
-<hr>
+
+
 
 
 <script type="text/javascript" src="index.js">
 
-
 </script>
 
 
-
-
-
 </p>
-
-
-
 
 
 <body>
