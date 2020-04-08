@@ -1,0 +1,61 @@
+
+
+<!DOCTYPE html>
+<html>
+<head>
+	<script type="text/javascript" src="graduationCalc.js"> </script>
+	<title>Graduation Rate Calculator</title>
+</head>
+<body>
+
+	<h1>Graduation Rate Calculator</h1>
+
+	<h4>The form below displays the predicted four year high school graduation probability of a student of selected demographics. </h4>
+
+<form onsubmit="rateCalculator(); return false;">
+  <p>Please select a <b>gender: </b></p>
+  <input type="radio" id="male" name="gender" value="male" onclick="genderChooser();">
+  <label for="male">Male</label><br>
+  <input type="radio" id="female" name="gender" value="female" onclick="genderChooser();">
+  <label for="female">Female</label><br>
+
+  <br>  
+
+  <p>Please select an <b>ethnicity: </b></p>
+  <input type="radio" id="White" name="ethnicity" value="White" onclick="raceChooser();">
+  <label for="White">White </label><br>
+  <input type="radio" id="Black" name="ethnicity" value="Black" onclick="raceChooser();">
+  <label for="Black">Black </label><br>  
+  <input type="radio" id="Hispanic" name="ethnicity" value="Hispanic" onclick="raceChooser();">
+  <label for="Hispanic">Hispanic</label><br>
+  <input type="radio" id="Asian" name="ethnicity" value="Asian" onclick="raceChooser();">
+  <label for="Asian">Asian</label><br>  
+  <input type="radio" id="Native American" name="ethnicity" value="Native American" onclick="raceChooser();">
+  <label for="Native American">Native American</label><br>
+
+<p>Please select an <b> English Language Learner </b>status: </p>
+  <input type="radio" id="yELL" name="ELL" value="yELL" onclick="ELLChooser();">
+  <label for="yELL">English Language Learner</label><br>
+  <input type="radio" id="nELL" name="ELL" value="nELL" onclick="ELLChooser();">
+  <label for="nELL">NOT An English Language Learner</label><br>
+
+  <br>  
+
+<p>Please select <b>income level: </b></p>
+  <input type="radio" id="lIncome" name="income" value="lIncome" onclick="EconChooser();">
+  <label for="lIncome">Receives free or reduced lunches (low income)</label><br>
+  <input type="radio" id="hIncome" name="income" value="hIncome" onclick="EconChooser();">
+  <label for="hIncome">Does not receive free or reduced lunches (not low income)</label><br>
+
+  <br>
+
+  <input type="submit" value="Submit">
+</form>
+
+<h3>This student's predicted probability of high school graduation is <mark><span id='gradSpan'> 0 </span>%. </mark></h3>
+
+<p>**Please note the calculations above use statistics compiled from the 2016/2017 school year. </p>
+
+
+</body>
+</html>
